@@ -1,0 +1,29 @@
+Kubernetes
+
+1. Set context with namespace
+		kubectl config set-context $(kubectl config current-context) --namespace=<namespace>
+		kubectl config set-context <context> --cluster=<cluster> --namespace=<namespace> --user=<user>
+    kubectl config use-context <context>
+
+2. View config parameters
+		 kubectl config view
+
+3. Delete Cluster and Context
+		kubectl config delete-cluster <cluster_name>
+		kubectl config delete-context <context_name>
+
+4. View Deployments
+		kubectl get deployments --all-namespaces=true
+
+5. Run the bash inside the container in the pod
+		kubectl -ti exec <your-pod-name> -- bash
+
+6. Docker build & push to artifactory
+		mvn -pl <project_path> docker:build docker:push
+
+7. Port forwarding 
+		kubectl port-forward my-pod <external_port>:<internal_port>
+
+
+
+
